@@ -17,13 +17,13 @@ if page.status_code == 200:
     post = soup.find('article')
 
     if post:
-        # Finds the title of the article, then extracts the title content.
+        # Finds the <h2> tag, then extracts the title content.
         title = post.find('h2').get_text()
 
-        # Finds the URL of the article, then extracts the URL content.
+        # Finds the anchor tag, then extracts the URL content.
         article_url = post.find('a')['href']
 
-        # Finds the text in the article, then extracts the entire article.
+        # Finds the <p> element, then extracts the entire article.
         text = post.find_all('p')
 
         print(title)
